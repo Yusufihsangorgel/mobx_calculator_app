@@ -7,15 +7,6 @@ import 'package:mobx_calculator_app/pages/home/View/home_part.dart';
 part 'calculator_view.dart';
 
 extension on CalculatorView {
-  AppBar _appBar() {
-    return AppBar(
-        //backgroundColor: Colors.transparent,
-        //shadowColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(calculatorView.userInput));
-  }
-
   Container _container() {
     return Container(
       decoration: const BoxDecoration(

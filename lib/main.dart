@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF15202B),
       ),
       themeMode: ThemeMode.dark,
-      // calculatorView.isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light,
-      home: HomeView(),
+      home: const HomeView(),
     );
   }
 }

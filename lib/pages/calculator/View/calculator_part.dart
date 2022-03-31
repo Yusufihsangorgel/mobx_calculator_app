@@ -18,7 +18,7 @@ extension on CalculatorView {
       title: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(17),
-          color: const Color.fromARGB(255, 25, 42, 58),
+          color: Color.fromARGB(255, 25, 42, 58),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -27,12 +27,12 @@ extension on CalculatorView {
                 onPressed: () {
                   calculatorView.setDarkMode(false);
                 },
-                icon: const Icon(Icons.light_mode)),
+                icon: Icon(Icons.light_mode)),
             IconButton(
                 onPressed: () {
                   calculatorView.setDarkMode(true);
                 },
-                icon: const Icon(Icons.dark_mode_outlined))
+                icon: Icon(Icons.dark_mode_outlined))
           ],
         ),
       ),
@@ -41,8 +41,7 @@ extension on CalculatorView {
 
   Container _container() {
     return Container(
-      decoration: const BoxDecoration(
-        // color: Colors.white,
+      decoration: BoxDecoration(
         color: Color.fromARGB(255, 53, 66, 78),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(17),
@@ -51,12 +50,12 @@ extension on CalculatorView {
       ),
       child: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -64,20 +63,20 @@ extension on CalculatorView {
                 color: Colors.greenAccent,
                 function: calculatorView.reset(),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
-                  text: "+/-", color: Colors.greenAccent, function: null),
-              const SizedBox(
+                  text: "+/-", color: Colors.greenAccent, function: () {}),
+              SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "%",
                 color: Colors.greenAccent,
-                function: null,
+                function: () {},
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -87,12 +86,12 @@ extension on CalculatorView {
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -100,7 +99,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(7),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -108,7 +107,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(8),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -116,7 +115,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(9),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -126,12 +125,12 @@ extension on CalculatorView {
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -139,7 +138,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(4),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -147,7 +146,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(5),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -155,7 +154,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(6),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -164,12 +163,12 @@ extension on CalculatorView {
                   function: calculatorView.increment(calculatorView.newNumber)),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -177,7 +176,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(1),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -185,7 +184,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(2),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -193,7 +192,7 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(3),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -202,20 +201,20 @@ extension on CalculatorView {
                   function: calculatorView.increment(calculatorView.newNumber)),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "⏎",
                 color: Colors.white,
-                function: null,
+                function: () {},
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
@@ -223,21 +222,21 @@ extension on CalculatorView {
                 color: Colors.white,
                 function: calculatorView.setNewNumber(0),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: ".",
                 color: Colors.white,
-                function: null,
+                function: () {},
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
-              myContainer(text: "=", color: Colors.red, function: null),
+              myContainer(text: "=", color: Colors.red, function: () {}),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           )
         ],
@@ -245,19 +244,23 @@ extension on CalculatorView {
     );
   }
 
-  TextField _textField() {
-    return TextField(
-      onChanged: (value) {
-        calculatorView.setText(value);
+  Observer _observer() {
+    return Observer(
+      builder: (_) {
+        return TextField(
+          onChanged: (value) {
+            calculatorView.setText(value);
+          },
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: calculatorView.newNumber.toString(),
+            hintStyle: TextStyle(
+              fontSize: 50,
+              color: Colors.white,
+            ),
+          ),
+        );
       },
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        hintText: calculatorView.newNumber.toString(),
-        hintStyle: const TextStyle(
-          fontSize: 50,
-          color: Colors.white,
-        ),
-      ),
     );
   }
 }

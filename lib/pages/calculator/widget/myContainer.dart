@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_calculator_app/pages/calculator/View-Model/calculator_view_model.dart';
 
 class myContainer extends StatelessWidget {
-  final calculatorView = CalculatorViewModel();
   final String text;
   final Color color;
-  var function;
+  Function function;
 
   myContainer(
       {Key? key,

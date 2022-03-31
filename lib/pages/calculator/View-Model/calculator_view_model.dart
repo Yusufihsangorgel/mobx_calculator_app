@@ -17,40 +17,41 @@ abstract class _CalculatorViewModelBase with Store {
   double newNumber = 0.0;
 
   @action
-  setNewNumber(double value) {
+  void setNewNumber(double value) {
     newNumber = value;
+    print("şuanki yeni rakam : $newNumber");
   }
 
   @observable
   double number = 0;
 
   @action
-  setText(var value) {
+  void setText(var value) {
     number = value;
   }
 
   @action
-  increment(double value) {
+  void increment(double value) {
     number += value;
   }
 
   @action
-  decriment(double value) {
+  void decriment(double value) {
     number -= value;
   }
 
   @action
-  reset() {
+  void reset() {
     number = 0;
   }
 
   @action
-  impact(double value) {
+  void impact(double value) {
     number *= value;
   }
 
   @action
-  divide(double value) {
+  void divide(double value) {
     number /= value;
   }
 }

@@ -16,20 +16,6 @@ extension on CalculatorView {
         title: Text(calculatorView.userInput));
   }
 
-/* Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(17),
-              color: Color.fromARGB(255, 25, 42, 58),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.light_mode)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.dark_mode_outlined))
-              ],
-            ),
-          ),*/
   Container _container() {
     return Container(
       decoration: const BoxDecoration(

@@ -9,33 +9,41 @@ class CalculatorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black,
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Observer(builder: (_) {
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Observer(builder: (_) {
+                // ignore: avoid_unnecessary_containers
                 return Container(
-                  color: Colors.black,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       _Lcontainer(),
-                      SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: _container()),
+                      _Fcontainer(),
                     ],
                   ),
                 );
               }),
-            ],
-          ),
+            ),
+            Expanded(
+                flex: 2,
+                child: Observer(builder: (_) {
+                  return Container(
+                      width: MediaQuery.of(context).size.width / 1,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 53, 66, 78),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(17),
+                          topRight: Radius.circular(17),
+                        ),
+                      ),
+                      child: _column());
+                }))
+          ],
         ),
       ),
     );
   }
 }
-
-
-/* */

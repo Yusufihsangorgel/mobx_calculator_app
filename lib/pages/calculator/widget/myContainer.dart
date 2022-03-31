@@ -10,7 +10,7 @@ class myContainer extends StatelessWidget {
       : super(key: key);
 
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-    fixedSize: Size.square(85),
+    fixedSize: const Size.square(85),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(0.0),
     ),
@@ -20,6 +20,8 @@ class myContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height / 10,
+      width: MediaQuery.of(context).size.width / 5.5,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(17),
         color: Colors.black,
@@ -30,7 +32,7 @@ class myContainer extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-                fontSize: 25.0, fontWeight: FontWeight.normal, color: color),
+                fontSize: 15, fontWeight: FontWeight.normal, color: color),
           )),
     );
   }

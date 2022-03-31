@@ -9,7 +9,7 @@ extension on HomeView {
     return AnimatedSplashScreen(
       splash: '[n]https://c.tenor.com/svlEgR8JDGoAAAAC/einstein-math.gif',
       splashIconSize: 500,
-      nextScreen: CalculatorView(),
+      nextScreen: const CalculatorView(),
       splashTransition: SplashTransition.decoratedBoxTransition,
       pageTransitionType: PageTransitionType.leftToRight,
       duration: 2500,

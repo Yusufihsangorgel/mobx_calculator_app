@@ -6,7 +6,6 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: appBar(),
       body: Container(
           width: MediaQuery.of(context).size.width,
           child: animatedSplashScreen()),

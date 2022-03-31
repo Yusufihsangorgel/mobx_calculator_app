@@ -162,13 +162,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  custom_navigator:
-    dependency: transitive
-    description:
-      name: custom_navigator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
   dart_style:
     dependency: transitive
     description:
@@ -176,13 +169,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.2"
-  device_simulator:
-    dependency: "direct main"
-    description:
-      name: device_simulator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.6"
   fake_async:
     dependency: transitive
     description:
@@ -249,13 +235,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  http:
-    dependency: "direct main"
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.13.4"
   http_multi_server:
     dependency: transitive
     description:

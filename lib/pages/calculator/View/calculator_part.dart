@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_calculator_app/pages/calculator/View-Model/calculator_view_model.dart';
 import 'package:mobx_calculator_app/pages/calculator/widget/myContainer.dart';
-import 'package:mobx_calculator_app/pages/home/View/home_part.dart';
 
 part 'calculator_view.dart';
 

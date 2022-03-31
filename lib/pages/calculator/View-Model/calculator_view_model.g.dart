@@ -9,49 +9,33 @@ part of 'calculator_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CalculatorViewModel on _CalculatorViewModelBase, Store {
-  final _$isDarkModeEnabledAtom =
-      Atom(name: '_CalculatorViewModelBase.isDarkModeEnabled');
+  final _$userInputAtom = Atom(name: '_CalculatorViewModelBase.userInput');
 
   @override
-  bool get isDarkModeEnabled {
-    _$isDarkModeEnabledAtom.reportRead();
-    return super.isDarkModeEnabled;
+  String get userInput {
+    _$userInputAtom.reportRead();
+    return super.userInput;
   }
 
   @override
-  set isDarkModeEnabled(bool value) {
-    _$isDarkModeEnabledAtom.reportWrite(value, super.isDarkModeEnabled, () {
-      super.isDarkModeEnabled = value;
+  set userInput(String value) {
+    _$userInputAtom.reportWrite(value, super.userInput, () {
+      super.userInput = value;
     });
   }
 
-  final _$newNumberAtom = Atom(name: '_CalculatorViewModelBase.newNumber');
+  final _$resultAtom = Atom(name: '_CalculatorViewModelBase.result');
 
   @override
-  double get newNumber {
-    _$newNumberAtom.reportRead();
-    return super.newNumber;
+  String get result {
+    _$resultAtom.reportRead();
+    return super.result;
   }
 
   @override
-  set newNumber(double value) {
-    _$newNumberAtom.reportWrite(value, super.newNumber, () {
-      super.newNumber = value;
-    });
-  }
-
-  final _$numberAtom = Atom(name: '_CalculatorViewModelBase.number');
-
-  @override
-  double get number {
-    _$numberAtom.reportRead();
-    return super.number;
-  }
-
-  @override
-  set number(double value) {
-    _$numberAtom.reportWrite(value, super.number, () {
-      super.number = value;
+  set result(String value) {
+    _$resultAtom.reportWrite(value, super.result, () {
+      super.result = value;
     });
   }
 
@@ -59,88 +43,44 @@ mixin _$CalculatorViewModel on _CalculatorViewModelBase, Store {
       ActionController(name: '_CalculatorViewModelBase');
 
   @override
-  void setDarkMode(bool value) {
+  void clean() {
     final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.setDarkMode');
+        name: '_CalculatorViewModelBase.clean');
     try {
-      return super.setDarkMode(value);
+      return super.clean();
     } finally {
       _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic setNewNumber(double value) {
+  void delete() {
     final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.setNewNumber');
+        name: '_CalculatorViewModelBase.delete');
     try {
-      return super.setNewNumber(value);
+      return super.delete();
     } finally {
       _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic setText(dynamic value) {
+  void addUserInput(String inputChar) {
     final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.setText');
+        name: '_CalculatorViewModelBase.addUserInput');
     try {
-      return super.setText(value);
+      return super.addUserInput(inputChar);
     } finally {
       _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic increment(double value) {
+  void calculate() {
     final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.increment');
+        name: '_CalculatorViewModelBase.calculate');
     try {
-      return super.increment(value);
-    } finally {
-      _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  dynamic decriment(double value) {
-    final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.decriment');
-    try {
-      return super.decriment(value);
-    } finally {
-      _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  dynamic reset() {
-    final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.reset');
-    try {
-      return super.reset();
-    } finally {
-      _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  dynamic impact(double value) {
-    final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.impact');
-    try {
-      return super.impact(value);
-    } finally {
-      _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  dynamic divide(double value) {
-    final _$actionInfo = _$_CalculatorViewModelBaseActionController.startAction(
-        name: '_CalculatorViewModelBase.divide');
-    try {
-      return super.divide(value);
+      return super.calculate();
     } finally {
       _$_CalculatorViewModelBaseActionController.endAction(_$actionInfo);
     }
@@ -149,9 +89,8 @@ mixin _$CalculatorViewModel on _CalculatorViewModelBase, Store {
   @override
   String toString() {
     return '''
-isDarkModeEnabled: ${isDarkModeEnabled},
-newNumber: ${newNumber},
-number: ${number}
+userInput: ${userInput},
+result: ${result}
     ''';
   }
 }

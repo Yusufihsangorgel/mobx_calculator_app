@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 class myContainer extends StatelessWidget {
   final String text;
   final Color color;
-  Function function;
+  final void Function() onTap;
 
   myContainer(
-      {Key? key,
-      required this.text,
-      required this.color,
-      required this.function})
+      {Key? key, required this.text, required this.color, required this.onTap})
       : super(key: key);
 
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
@@ -29,9 +26,7 @@ class myContainer extends StatelessWidget {
       ),
       child: TextButton(
           style: flatButtonStyle,
-          onPressed: () {
-            function();
-          },
+          onPressed: onTap,
           child: Text(
             text,
             style: TextStyle(

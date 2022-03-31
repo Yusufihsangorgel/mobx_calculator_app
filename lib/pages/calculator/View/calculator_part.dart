@@ -6,42 +6,33 @@ import 'package:mobx_calculator_app/pages/home/View/home_part.dart';
 
 part 'calculator_view.dart';
 
-final calculatorView = CalculatorViewModel();
-
 extension on CalculatorView {
   AppBar _appBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      shadowColor: Colors.transparent,
-      automaticallyImplyLeading: false,
-      centerTitle: true,
-      title: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(17),
-          color: Color.fromARGB(255, 25, 42, 58),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-                onPressed: () {
-                  calculatorView.setDarkMode(false);
-                },
-                icon: Icon(Icons.light_mode)),
-            IconButton(
-                onPressed: () {
-                  calculatorView.setDarkMode(true);
-                },
-                icon: Icon(Icons.dark_mode_outlined))
-          ],
-        ),
-      ),
-    );
+        //backgroundColor: Colors.transparent,
+        //shadowColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text(calculatorView.userInput));
   }
 
+/* Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(17),
+              color: Color.fromARGB(255, 25, 42, 58),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.light_mode)),
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.dark_mode_outlined))
+              ],
+            ),
+          ),*/
   Container _container() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color.fromARGB(255, 53, 66, 78),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(17),
@@ -50,193 +41,192 @@ extension on CalculatorView {
       ),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "AC",
                 color: Colors.greenAccent,
-                function: calculatorView.reset(),
+                onTap: calculatorView.clean,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                  text: "+/-", color: Colors.greenAccent, function: () {}),
-              SizedBox(
+                text: "+/-",
+                color: Colors.greenAccent,
+                onTap: () {},
+              ),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "%",
                 color: Colors.greenAccent,
-                function: () {},
+                onTap: () => calculatorView.addUserInput('%'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "÷",
                 color: Colors.red,
-                function: calculatorView.divide(calculatorView.newNumber),
+                onTap: () => calculatorView.addUserInput('/'),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "7",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(7),
-              ),
-              SizedBox(
+                  text: "7",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('7')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "8",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(8),
-              ),
-              SizedBox(
+                  text: "8",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('8')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "9",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(9),
-              ),
-              SizedBox(
+                  text: "9",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('9')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "X",
-                color: Colors.red,
-                function: calculatorView.impact(calculatorView.newNumber),
-              ),
+                  text: "X",
+                  color: Colors.red,
+                  onTap: () => calculatorView.addUserInput('*')),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "4",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(4),
-              ),
-              SizedBox(
+                  text: "4",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('4')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "5",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(5),
-              ),
-              SizedBox(
+                  text: "5",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('5')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
-                text: "6",
-                color: Colors.white,
-                function: calculatorView.setNewNumber(6),
-              ),
-              SizedBox(
+                  text: "6",
+                  color: Colors.white,
+                  onTap: () => calculatorView.addUserInput('6')),
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                   text: "-",
                   color: Colors.red,
-                  function: calculatorView.increment(calculatorView.newNumber)),
+                  onTap: () => calculatorView.addUserInput('-')),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "1",
                 color: Colors.white,
-                function: calculatorView.setNewNumber(1),
+                onTap: () => calculatorView.addUserInput('1'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "2",
                 color: Colors.white,
-                function: calculatorView.setNewNumber(2),
+                onTap: () => calculatorView.addUserInput('2'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "3",
                 color: Colors.white,
-                function: calculatorView.setNewNumber(3),
+                onTap: () => calculatorView.addUserInput('3'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                   text: "+",
                   color: Colors.white,
-                  function: calculatorView.increment(calculatorView.newNumber)),
+                  onTap: () => calculatorView.addUserInput('+')),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "⏎",
                 color: Colors.white,
-                function: () {},
+                onTap: calculatorView.delete,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: "0",
                 color: Colors.white,
-                function: calculatorView.setNewNumber(0),
+                onTap: () => calculatorView.addUserInput('0'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               myContainer(
                 text: ".",
                 color: Colors.white,
-                function: () {},
+                onTap: () => calculatorView.addUserInput('.'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
-              myContainer(text: "=", color: Colors.red, function: () {}),
+              myContainer(
+                  text: "=",
+                  color: Colors.red,
+                  onTap: calculatorView.calculate),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           )
         ],
@@ -244,23 +234,29 @@ extension on CalculatorView {
     );
   }
 
-  Observer _observer() {
-    return Observer(
-      builder: (_) {
-        return TextField(
-          onChanged: (value) {
-            calculatorView.setText(value);
-          },
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: calculatorView.newNumber.toString(),
-            hintStyle: TextStyle(
-              fontSize: 50,
-              color: Colors.white,
+  Container _Lcontainer() {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerLeft,
+            child: Text(
+              calculatorView.userInput,
+              style: const TextStyle(fontSize: 35, color: Colors.redAccent),
             ),
           ),
-        );
-      },
+          Container(
+            padding: const EdgeInsets.all(25),
+            alignment: Alignment.centerRight,
+            child: Text(
+              calculatorView.result,
+              style: const TextStyle(fontSize: 70, color: Colors.lightGreen),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

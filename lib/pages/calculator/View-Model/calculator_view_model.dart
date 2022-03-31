@@ -1,57 +1,36 @@
 import 'package:mobx/mobx.dart';
+import 'package:math_expressions/math_expressions.dart';
 part 'calculator_view_model.g.dart';
 
 class CalculatorViewModel = _CalculatorViewModelBase with _$CalculatorViewModel;
 
 abstract class _CalculatorViewModelBase with Store {
+  Parser parser = Parser();
+  ContextModel cm = ContextModel();
   @observable
-  bool isDarkModeEnabled = true;
-
-  @action
-  void setDarkMode(bool value) {
-    isDarkModeEnabled = value;
-    print("çalıştım knk aha şuanki değeri bu $isDarkModeEnabled");
-  }
+  String userInput = '';
 
   @observable
-  double newNumber = 0.0;
+  String result = '';
 
   @action
-  void setNewNumber(double value) {
-    newNumber = value;
-    print("şuanki yeni rakam : $newNumber");
-  }
-
-  @observable
-  double number = 0;
-
-  @action
-  void setText(var value) {
-    number = value;
+  void clean() {
+    userInput = '';
   }
 
   @action
-  void increment(double value) {
-    number += value;
+  void delete() {
+    userInput = userInput.substring(0, userInput.length - 1);
   }
 
   @action
-  void decriment(double value) {
-    number -= value;
+  void addUserInput(String inputChar) {
+    userInput += inputChar;
   }
 
   @action
-  void reset() {
-    number = 0;
-  }
-
-  @action
-  void impact(double value) {
-    number *= value;
-  }
-
-  @action
-  void divide(double value) {
-    number /= value;
+  void calculate() {
+    final Expression exp = parser.parse(userInput);
+    result = exp.evaluate(EvaluationType.REAL, cm).toString();
   }
 }

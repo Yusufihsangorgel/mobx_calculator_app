@@ -9,25 +9,28 @@ class CalculatorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Observer(builder: (_) {
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Observer(builder: (_) {
                 return Container(
                   color: Colors.black,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       _Lcontainer(),
-                      _container(),
+                      SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: _container()),
                     ],
                   ),
                 );
               }),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
